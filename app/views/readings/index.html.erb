@@ -1,0 +1,10 @@
+<h1>Readings</h1>
+
+<ul>
+  <% @readings.each do |reading| %>
+    <li>
+      <%= reading.created_at %>
+      <%= reading.glucose_level %>
+    </li>
+  <% end %>
+</ul>
