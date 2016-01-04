@@ -1,15 +1,47 @@
 <h1> Registration </h1>
 
 <%= form_for @user do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit %>
+  <div>
+    <p><%= f.label :first_name %></p>
+    <p><%= f.text_field :first_name %></p>
+
+    <% if @user.errors[:first_name].present? %>
+      <p>First Name <%= @user.errors[:first_name][0] %></p>
+    <% end %>
+  </div>
+  <div>
+    <p><%= f.label :last_name %></p>
+    <p><%= f.text_field :last_name %></p>
+
+    <% if @user.errors[:last_name].present? %>
+      <p>Last Name <%= @user.errors[:last_name][0] %></p>
+    <% end %>
+  </div>
+  <div>
+    <p><%= f.label :email %></p>
+    <p><%= f.text_field :email %></p>
+
+    <% if @user.errors[:email].present? %>
+      <p>Email <%= @user.errors[:email][0] %></p>
+    <% end %>
+  </div>
+  <div>
+    <p><%= f.label :password %></p>
+    <p><%= f.password_field :password %></p>
+
+    <% if @user.errors[:password].present? %>
+      <p>Password <%= @user.errors[:password][0] %></p>
+    <% end %>
+  </div>
+  <div>
+    <p><%= f.label :password_confirmation %></p>
+    <p><%= f.password_field :password_confirmation %></p>
+
+    <% if @user.errors[:password_confirmation].present? %>
+      <p>Password Confirmation <%= @user.errors[:password_confirmation][0] %></p>
+    <% end %>
+  </div>
+  <div>
+    <p><%= f.submit %></p>
+  </div>
 <% end %>
