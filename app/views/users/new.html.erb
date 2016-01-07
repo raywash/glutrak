@@ -1,4 +1,11 @@
 <h1> Registration </h1>
+# <% if @user.errors.any? %>
+#    <ul>
+#      <% @user.errors.each do |error| %>
+#        <li><%= @user.errors[error][0] %></li>
+#      <% end %>
+#    </ul>
+#  <% end %>
 
 <%= form_for @user do |f| %>
   <div>
